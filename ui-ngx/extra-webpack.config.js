@@ -68,9 +68,14 @@ module.exports = (config, options) => {
     const index = config.plugins.findIndex(p => p instanceof ngWebpack.AngularWebpackPlugin);
     let angularWebpackPlugin = config.plugins[index];
     if (config.mode === 'production') {
-        const angularCompilerOptions = angularWebpackPlugin.pluginOptions;
-        angularCompilerOptions.emitClassMetadata = true;
-        angularCompilerOptions.emitNgModuleScope = true;
+     //   const angularCompilerOptions = angularWebpackPlugin.pluginOptions;
+        // angularCompilerOptions.emitClassMetadata = true;
+        // angularCompilerOptions.emitNgModuleScope = true;
+        //  // Define what you need directly here:
+         const angularCompilerOptions = {
+             emitClassMetadata: true,
+             emitNgModuleScope: true
+         };
         config.plugins.splice(index, 1);
         angularWebpackPlugin = new ngWebpack.AngularWebpackPlugin(angularCompilerOptions);
         config.plugins.push(angularWebpackPlugin);

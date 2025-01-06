@@ -58,7 +58,7 @@
                 "glob": "**/*",
                 "input": "node_modules/tinymce",
                 "output": "/assets/tinymce/"
-              },
+              }
             ],
             "styles": [
               "src/styles.scss",
@@ -93,6 +93,7 @@
             "customWebpackConfig": {
               "path": "./extra-webpack.config.js"
             },
+
             "allowedCommonJsDependencies": [
               "hammerjs",
               "react",
