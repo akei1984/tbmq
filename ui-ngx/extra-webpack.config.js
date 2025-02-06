@@ -65,8 +65,7 @@ module.exports = (config, options) => {
     );
 
     config.module.rules[2].use[0].options.aot = false;
-    const index = config.plugins.findIndex(p => p instanceof ngWebpack.AngularWebpackPlugin);
-    let angularWebpackPlugin = config.plugins[index];
+    const index = config.plugins.findIndex(p => p.constructor.name === 'AngularWebpackPlugin');    let angularWebpackPlugin = config.plugins[index];
     if (config.mode === 'production') {
         const angularCompilerOptions = angularWebpackPlugin.pluginOptions;
         angularCompilerOptions.emitClassMetadata = true;

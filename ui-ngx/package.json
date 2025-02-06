@@ -123,7 +123,7 @@
         "@angular/cli": "^15.2.10",
         "@angular/compiler-cli": "^15.2.10",
         "@angular/language-service": "^15.2.10",
-        "@ngtools/webpack": "15.2.1",
+        "@ngtools/webpack": "15.2.10",
         "@types/ace-diff": "^2.1.1",
         "@types/canvas-gauges": "^2.1.4",
         "@types/flot": "^0.0.32",
