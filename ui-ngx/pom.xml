@@ -55,7 +55,7 @@
                             <goal>install-node-and-yarn</goal>
                         </goals>
                         <configuration>
-                            <nodeVersion>v16.15.1</nodeVersion>
+                            <nodeVersion>v18.19.0</nodeVersion>
                             <yarnVersion>v1.22.17</yarnVersion>
                         </configuration>
                     </execution>
@@ -99,6 +99,35 @@
                             </execution>
                         </executions>
                     </plugin>
+                  <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.2.0</version>
+                    <executions>
+                      <execution>
+                        <id>remove-node-modules-and-angular-files</id>
+                       <phase>clean</phase>
+                        <goals>
+                          <goal>clean</goal>
+                        </goals>
+                        <configuration>
+                          <filesets>
+                            <fileset>
+                              <directory>${project.basedir}/node_modules</directory>
+                              <includes>
+                                <include>**/*</include>
+                              </includes>
+                            </fileset>
+                            <fileset>
+                              <directory>${project.basedir}/.angular_files</directory>
+                              <includes>
+                                <include>**/*</include>
+                              </includes>
+                            </fileset>
+                          </filesets>
+                        </configuration>
+                      </execution>
+                    </executions>
+                  </plugin>
                 </plugins>
             </build>
         </profile>
